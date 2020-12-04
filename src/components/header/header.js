@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
 import Navbar from "./navbar/navbar";
+import {UserConsumer} from "../provider/user-provider";
+import withUser from "../hooks/withUser";
 
 class Header extends Component {
     render() {
+        const {login, user} = this.props
         return (
             <header className="header_area">
                 <div
@@ -24,11 +27,10 @@ class Header extends Component {
                         <div className="favourite-area">
                             <a href="#"><img src="img/core-img/heart.svg" alt=""/></a>
                         </div>
-
                         <div className="user-login-info">
-                            <a href="#"><img src="img/core-img/user.svg" alt=""/></a>
+                            <a href="#"><img onClick={login} src="img/core-img/user.svg"
+                                             alt=""/>{user.isAuthenticated && user.username}</a>
                         </div>
-
                         <div className="cart-area">
                             <a href="#" id="essenceCartBtn"><img src="img/core-img/bag.svg" alt=""/>
                                 <span>3</span></a>
@@ -41,4 +43,13 @@ class Header extends Component {
     }
 }
 
-export default Header;
+const mapStateToProps = ({user}) => {
+    return {user}
+}
+
+const mapActionsToProps = ({login}) => {
+    return {login}
+}
+
+
+export default withUser(mapStateToProps, mapActionsToProps)(Header);
