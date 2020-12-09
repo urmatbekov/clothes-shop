@@ -15,7 +15,6 @@ const userReduce = (state = initialState, action) => {
         default:
             return state
     }
-
 }
 
 
