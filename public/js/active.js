@@ -10,30 +10,30 @@
 
     // :: Sliders Active Code
     if ($.fn.owlCarousel) {
-        $('.popular-products-slides').owlCarousel({
-            items: 4,
-            margin: 30,
-            loop: true,
-            nav: false,
-            dots: false,
-            autoplay: true,
-            autoplayTimeout: 5000,
-            smartSpeed: 1000,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                576: {
-                    items: 2
-                },
-                768: {
-                    items: 3
-                },
-                992: {
-                    items: 4
-                }
-            }
-        });
+        // $('.popular-products-slides').owlCarousel({
+        //     items: 4,
+        //     margin: 30,
+        //     loop: true,
+        //     nav: false,
+        //     dots: false,
+        //     autoplay: true,
+        //     autoplayTimeout: 5000,
+        //     smartSpeed: 1000,
+        //     responsive: {
+        //         0: {
+        //             items: 1
+        //         },
+        //         576: {
+        //             items: 2
+        //         },
+        //         768: {
+        //             items: 3
+        //         },
+        //         992: {
+        //             items: 4
+        //         }
+        //     }
+        // });
         $('.product_thumbnail_slides').owlCarousel({
             items: 1,
             margin: 0,

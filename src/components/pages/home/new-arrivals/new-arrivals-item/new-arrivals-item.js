@@ -2,13 +2,16 @@ import React, {Component} from 'react';
 
 class NewArrivalsItem extends Component {
     render() {
+        const {item} = this.props;
         return (
             <div className="single-product-wrapper">
 
                 <div className="product-img">
-                    <img src="img/product-img/product-1.jpg" alt=""/>
 
-                    <img className="hover-img" src="img/product-img/product-2.jpg" alt=""/>
+                        <img src={item.images[0].original} alt=""/>
+
+
+                    {item.images[1] && <img className="hover-img" src={item.images[1].original} alt=""/>}
 
                     <div className="product-favourite">
                         <a href="#" className="favme fa fa-heart"></a>
